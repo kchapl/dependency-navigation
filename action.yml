@@ -1,0 +1,7 @@
+name: Hello Action
+description: Outputs Hello to the console.
+runs:
+  using: composite
+  steps:
+    - run: echo "Hello"
+      shell: bash
