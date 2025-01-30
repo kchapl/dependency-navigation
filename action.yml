@@ -3,5 +3,7 @@ description: Outputs Hello to the console.
 runs:
   using: composite
   steps:
+    - uses: actions/checkout@v3
+    - uses: scalacenter/sbt-dependency-submission@64084844d2b0a9b6c3765f33acde2fbe3f5ae7d3 # v3.1.0
     - run: echo "Hello"
       shell: bash
