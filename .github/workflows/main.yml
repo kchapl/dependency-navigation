@@ -11,4 +11,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Hello Action
-        uses: .@main
+        uses: ./action.yml
