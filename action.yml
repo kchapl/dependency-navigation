@@ -1,11 +1,18 @@
 name: Hello Action
 description: Outputs Hello to the console.
+
 runs:
+
   using: composite
+  
   steps:
     - name: Set up SBT
       uses: sbt/setup-sbt@96cf3f09dc501acdad7807fffe97dba9fa0709be # v1.1.5
     - name: Submit dependency graph
       uses: scalacenter/sbt-dependency-submission@64084844d2b0a9b6c3765f33acde2fbe3f5ae7d3 # v3.1.0
+    - name: Review changed dependencies
+      uses: actions/dependency-review-action@v4
+      with:
+        comment-summary-in-pr: always
     - run: echo "Hello"
       shell: bash
